@@ -1,0 +1,65 @@
+attack: true
+
+
+version_A: clean
+version_B: fgsm
+dataset_size: .inf 
+
+
+num_workers: 10
+pure_attack_a: 0
+pure_attack_b: 0.3
+
+epochs_a: 700
+epochs_b: 1500
+
+lr: 0.0001
+beta1: 0.5
+beta2: 0.999
+weight_decay: 0.0001
+step_size: 1000
+gamma: 0.5
+
+
+recon_loss_type: L2
+
+EQ: true
+all_EQ: true
+
+recon_a_w: 1
+recon_b_w: 1
+kl_a_w: 0.001
+kl_b_w: 0.001
+
+cross_w: 0.001
+cyc_recon_b_w: 10
+cyc_kl_b_w: 0.001
+recon_latent_b_w: 1
+
+
+conv_dim: 1
+num_layers: 4
+dim: 512
+latent_dim: 64
+
+customize_dim_a: False
+inter_dims_a: 
+- 512
+- 256
+- 128
+- 64
+
+customize_dim_b: True
+inter_dims_b: 
+- 512
+- 400
+- 300
+- 200
+- 100
+- 64
+
+time:
+    kernel_size: 7
+    stride: 1
+    padding: 3
+
